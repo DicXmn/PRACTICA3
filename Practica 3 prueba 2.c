@@ -28,10 +28,10 @@ void main()
    setup_timer_0(rtcc_internal||rtcc_div_256);   
    enable_interrupts(int_timer0);
    enable_interrupts(global);
-   set_tris_a(0x00);
-   set_tris_b(0x00);
-   set_tris_c(0x00);
-   set_tris_d(0x00);
+   set_tris_A(0x00);
+   set_tris_B(0x00);
+   set_tris_C(0x00);
+   set_tris_D(0x00);
    while(true)
    {
       output_A(resultPortA);      
