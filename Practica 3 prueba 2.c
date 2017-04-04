@@ -6,15 +6,21 @@
 
 #use delay(clock=16000000)
 
-int contA=0, contB=0, contC=0, contD=0;
-int anilloA=1, anilloB=1, anilloC=1, anilloD=1;
+int8 timeCounter100ms=0;
+int8 timeCounter500ms=0; 
+int8 timeCounter1000ms=0; 
+int8 timeCounter1500ms=0;
+int8 resultPortA=0;
+int8 resultPortB=0;
+int8 resultPortC=0;
+int8 resultPortD=0;
 #int_timer0
 void timer_0()
 {
-   contA++;  
-   contB++;
-   contC++;
-   contD++; 
+   timeCounter100ms++;
+   timeCounter500ms++; 
+   timeCounter1000ms++;
+   timeCounter1500ms++;
 }
 
 void main()
@@ -28,10 +34,10 @@ void main()
    set_tris_d(0x00);
    while(true)
    {
-      output_a(anilloA);      
-      output_b(anilloB);
-      output_c(anilloC);
-      output_d(anilloD);
+      output_A(resultPortA);      
+      output_B(resultPortB);
+      output_C(resultPortC);
+      output_D(resultPortD);
             
       if(contA>=6)
       { 
