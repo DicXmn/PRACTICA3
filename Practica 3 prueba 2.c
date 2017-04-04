@@ -1,7 +1,7 @@
 #include <18F4620.h>
 #include <stdlib.h>
 #include <stdio.h>
-#fuses XT, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
+#fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
 
 #use delay(clock=16000000)
@@ -25,7 +25,7 @@ void timer_0()
 
 void main()
 {
-   setup_timer_0(rtcc_internal||rtcc_div_256);   
+   setup_timer_0(rtcc_internal|rtcc_div_1);   
    enable_interrupts(int_timer0);
    enable_interrupts(global);
    set_tris_A(0x00);
