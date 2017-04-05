@@ -25,7 +25,7 @@ void timer_0()
 
 void main()
 {
-   setup_timer_0(rtcc_internal|rtcc_div_1);   
+   setup_timer_0(rtcc_internal|rtcc_div_256|rtcc_8_bit);   
    enable_interrupts(int_timer0);
    enable_interrupts(global);
    set_tris_A(0x00);
