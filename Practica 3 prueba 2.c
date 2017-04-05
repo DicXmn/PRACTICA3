@@ -10,10 +10,10 @@ int8 timeCounter100ms=0;
 int8 timeCounter500ms=0; 
 int8 timeCounter1000ms=0; 
 int8 timeCounter1500ms=0;
-int8 resultPortA=0;
-int8 resultPortB=0;
-int8 resultPortC=0;
-int8 resultPortD=0;
+int8 resultPortA=1;
+int8 resultPortB=1;
+int8 resultPortC=1;
+int8 resultPortD=1;
 #int_timer0
 void timer_0()
 {
@@ -39,34 +39,34 @@ void main()
       output_C(resultPortC);
       output_D(resultPortD);
             
-      if(contA>=6)
+      if(timeCounter100ms>=6)
       { 
-         anilloA=anilloA<<1;             
-         contA=0;         
+         resultPortA=resultPortA<<1;             
+         timeCounter100ms=0;         
       }
-      if(contB>=30)
+      if(timeCounter500ms>=30)
       {
-         anilloB=anilloB<<1;
-         contB=0;
+         resultPortB=resultPortB<<1;
+         timeCounter500ms=0;
       }
-      if(contC>=61)
+      if(timeCounter1000ms>=61)
       {
-         anilloC=anilloC<<1;
-         contC=0;
+         resultPortC=resultPortC<<1;
+         timeCounter1000ms=0;
       }
-      if(contD>=91)
+      if(timeCounter1500ms>=91)
       {
-         anilloD=anilloD<<1;
-         contD=0;
+         resultPortD=resultPortD<<1;
+         timeCounter1500ms=0;
       }     
-      if(anilloA==64)
-         anilloA=1;
-      if(anilloB==0)
-         anilloB=1;
-      if(anilloC==0)
-         anilloC=1;
-      if(anilloD==0)
-         anilloD=1;
+      if(resultPortA>=64)
+         resultPortA=1;
+      if(resultPortB==0)
+         resultPortB=1;
+      if(resultPortC==0)
+         resultPortC=1;
+      if(resultPortD==0)
+         resultPortD=1;
    }
 }
 
