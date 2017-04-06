@@ -6,18 +6,21 @@
 
 #use delay(clock=16000000)
 
-int8 timeCounter100ms=0;   //variables used as counters in the interruption
+//variables used as counters in the interruption
+int8 timeCounter100ms=0;   
 int8 timeCounter500ms=0;    
 int8 timeCounter1000ms=0; 
 int8 timeCounter1500ms=0;
-int8 resultPortA=1;   //variables uses as ringcounters, this variables are sent to the outputs.
+//variables uses as ringcounters, this variables are sent to the outputs.
+int8 resultPortA=1;   
 int8 resultPortB=1;
 int8 resultPortC=1;
 int8 resultPortD=1;
 #int_timer0   //interruption timer0
 void timer_0()//ISR
 {
-   timeCounter100ms++;   //this counters are increased by one every time the interruption is executed
+   //this counters are increased by one every time the interruption is executed
+   timeCounter100ms++;   
    timeCounter500ms++; 
    timeCounter1000ms++;
    timeCounter1500ms++;
@@ -25,7 +28,8 @@ void timer_0()//ISR
 
 void main()
 {
-   setup_timer_0(rtcc_internal|rtcc_div_256|rtcc_8_bit);   //setting up TIMER0 with a 1 : 256 prescaler, 8 bit mode and timer mode
+   //setting up TIMER0 with a 1 : 256 prescaler, 8 bit mode and timer mode
+   setup_timer_0(rtcc_internal|rtcc_div_256|rtcc_8_bit);   
    enable_interrupts(int_timer0);   //setting up the TIMER interrupt
    enable_interrupts(global);    //setting up the global interruption
    set_tris_A(0x00);   //setting ports A, B, C and D to outputs
