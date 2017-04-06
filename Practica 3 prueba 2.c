@@ -1,7 +1,7 @@
 #include <18F4620.h>
 #include <stdlib.h>
 #include <stdio.h>
-#fuses INTRC_IO, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
+#fuses XT, NOFCMEN, NOIESO, PUT, NOBROWNOUT, NOWDT
 #fuses NOPBADEN, NOMCLR, STVREN, NOLVP, NODEBUG
 
 #use delay(clock=16000000)
